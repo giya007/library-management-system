@@ -1,38 +1,4 @@
-import os
-
-AVAILABLE = "available.txt"
-ISSUED = "issued.txt"
-
-
-def initialize_files():
-    if not os.path.exists(AVAILABLE):
-        open(AVAILABLE, "w").close()
-
-    if not os.path.exists(ISSUED):
-        open(ISSUED, "w").close()
-
-
-def read_file_dict(filename):
-    """Reads file into a dictionary {book: count}"""
-    data = {}
-    f = open(filename, "r")
-    lines = f.readlines()
-    f.close()
-
-    for line in lines:
-        if "|" in line:
-            book, count = line.strip().split("|")
-            data[book.strip()] = int(count.strip())
-    return data
-
-
-def write_file_dict(filename, data):
-    f = open(filename, "w")
-    for book, count in data.items():
-        f.write(f"{book} | {count}\n")
-    f.close()
-
-
+import sys
 def view_books():
     print("\n--- Available Books ---")
     available = read_file_dict(AVAILABLE)
@@ -50,7 +16,6 @@ def view_books():
         for book, count in issued.items():
             print(f"{book} - Copies Issued: {count}")
     print()
-
 
 def add_book():
     book = input("Enter book name to add: ").strip()
@@ -106,7 +71,6 @@ def return_book():
         print("Error: too many copies being returned or book never issued.\n")
         return
 
-    # update numbers
     issued[book] -= copies
     if issued[book] == 0:
         del issued[book]
@@ -127,9 +91,7 @@ def menu():
         print("3. Issue Book")
         print("4. Return Book")
         print("5. Exit")
-
         choice = input("Enter choice: ")
-
         if choice == "1":
             view_books()
         elif choice == "2":
@@ -143,10 +105,9 @@ def menu():
             break
         else:
             print("Invalid choice.\n")
+        input("Do you wish to continue?(True/False): ")
 
+menu()
 
-if __name__ == "__main__":
-    initialize_files()
-    menu()
 
 
