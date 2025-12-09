@@ -128,7 +128,7 @@ def menu():
         print("4. Return Book")
         print("5. Exit")
 
-        choice = input("Enter choice: ").strip()
+        choice = input("Enter choice: ")
 
         if choice == "1":
             view_books()
@@ -148,4 +148,5 @@ def menu():
 if __name__ == "__main__":
     initialize_files()
     menu()
+
 
