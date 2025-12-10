@@ -14,7 +14,7 @@ def view_books():
     print("\n--- Issued Books ---")
     book_inventory.close()
     try:
-        with open("issued.txt", "r") as f:
+        with open("issued.txt", "r"):
             book_issued=open("issued.txt","r")
             issued_book=book_issued.read()
             print("BOOK ID. | BOOK NAME | AUTHOR | NO. OF COPIES ISSUED")
@@ -113,6 +113,7 @@ def menu():
         input("Do you wish to continue?(True/False): ")
 
 menu()
+
 
 
 
