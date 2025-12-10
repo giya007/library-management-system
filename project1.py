@@ -1,18 +1,23 @@
 import sys
 book_inventory=open("available.txt","w")
-book_inventory.write("Atomic Habits | James Clear | 2\n")
-book_inventory.write("Fluent Python | Luciano Ramalho | 6\n")
-book_inventory.write("Intoduction to Algorithms | Thomas H. Cormen | 4\n")
-book_inventory.write("Power of Subconscious Mind | Joseph Murphy | 3\n")
-book_inventory.write("Harry Potter and the Sorcerer's Stone | JK Rowling | 2\n")
+book_inventory.write("111| Atomic Habits | James Clear | 2\n")
+book_inventory.write("211| Fluent Python | Luciano Ramalho | 6\n")
+book_inventory.write("311| Intoduction to Algorithms | Thomas H. Cormen | 4\n")
+book_inventory.write("411| Power of Subconscious Mind | Joseph Murphy | 3\n")
+book_inventory.write("511| Harry Potter and the Sorcerer's Stone | JK Rowling | 2\n")
 book_inventory.close()
 def view_books():
     book_inventory = open("available.txt", "w")
+    print("BOOK ID. | BOOK NAME | AUTHOR | NO. OF COPIES AVAILABLE")
     books_view=book_inventory.read()
     print(books_viewbook)
     print("\n--- Issued Books ---")
-    
-
+    book_inventory.close()
+    book_issued=open("issued.txt","r")
+    issued_book=book_issued.read()
+    print("BOOK ID. | BOOK NAME | AUTHOR | NO. OF COPIES ISSUED")
+    print(issued_book)
+    book_issued.close()
 def add_book():
     book = input("Enter book name to add: ").strip()
     copies = int(input("Enter number of copies: ").strip())
@@ -104,6 +109,7 @@ def menu():
         input("Do you wish to continue?(True/False): ")
 
 menu()
+
 
 
 
