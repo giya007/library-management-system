@@ -7,22 +7,13 @@ book_inventory.write("Power of Subconscious Mind | Joseph Murphy | 3")
 book_inventory.write("Harry Potter and the Sorcerer's Stone | JK Rowling | 2")
 book_inventory.close()
 def view_books():
-    print("\n--- Available Books ---")
-    available = read_file_dict(AVAILABLE)
-    if not available:
-        print("(none)")
-    else:
-        for book, count in available.items():
-            print(f"{book} - Copies Available: {count}")
-
+    print("\n--- Available Books--")
+    book_available=open("available.txt","r")
+    for i in book_available:
+        book_list=book_available.split("|")
+    
     print("\n--- Issued Books ---")
-    issued = read_file_dict(ISSUED)
-    if not issued:
-        print("(none)")
-    else:
-        for book, count in issued.items():
-            print(f"{book} - Copies Issued: {count}")
-    print()
+    
 
 def add_book():
     book = input("Enter book name to add: ").strip()
@@ -115,6 +106,7 @@ def menu():
         input("Do you wish to continue?(True/False): ")
 
 menu()
+
 
 
 
