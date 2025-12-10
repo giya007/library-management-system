@@ -13,11 +13,15 @@ def view_books():
     print(books_viewbook)
     print("\n--- Issued Books ---")
     book_inventory.close()
-    book_issued=open("issued.txt","r")
-    issued_book=book_issued.read()
-    print("BOOK ID. | BOOK NAME | AUTHOR | NO. OF COPIES ISSUED")
-    print(issued_book)
-    book_issued.close()
+    try:
+        with open("issued.txt", "r") as f:
+            book_issued=open("issued.txt","r")
+            issued_book=book_issued.read()
+            print("BOOK ID. | BOOK NAME | AUTHOR | NO. OF COPIES ISSUED")
+            print(issued_book)
+            book_issued.close()      
+    except FileNotFoundError:
+        print("File does not exist")
 def add_book():
     book = input("Enter book name to add: ").strip()
     copies = int(input("Enter number of copies: ").strip())
@@ -109,6 +113,7 @@ def menu():
         input("Do you wish to continue?(True/False): ")
 
 menu()
+
 
 
 
