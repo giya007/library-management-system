@@ -1,17 +1,15 @@
 import sys
 book_inventory=open("available.txt","w")
-book_inventory.write("Atomic Habits | James Clear | 2")
-book_inventory.write("Fluent Python | Luciano Ramalho | 6")
-book_inventory.write("Intoduction to Algorithms | Thomas H. Cormen | 4")
-book_inventory.write("Power of Subconscious Mind | Joseph Murphy | 3")
-book_inventory.write("Harry Potter and the Sorcerer's Stone | JK Rowling | 2")
+book_inventory.write("Atomic Habits | James Clear | 2\n")
+book_inventory.write("Fluent Python | Luciano Ramalho | 6\n")
+book_inventory.write("Intoduction to Algorithms | Thomas H. Cormen | 4\n")
+book_inventory.write("Power of Subconscious Mind | Joseph Murphy | 3\n")
+book_inventory.write("Harry Potter and the Sorcerer's Stone | JK Rowling | 2\n")
 book_inventory.close()
 def view_books():
-    print("\n--- Available Books--")
-    book_available=open("available.txt","r")
-    for i in book_available:
-        book_list=book_available.split("|")
-    
+    book_inventory = open("available.txt", "w")
+    books_view=book_inventory.read()
+    print(books_viewbook)
     print("\n--- Issued Books ---")
     
 
@@ -106,6 +104,7 @@ def menu():
         input("Do you wish to continue?(True/False): ")
 
 menu()
+
 
 
 
