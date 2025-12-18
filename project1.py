@@ -1,21 +1,21 @@
 import os
-def view_books():    
+def view_books():
         try:
-        AVAILABLE_BOOKS=open("available.txt",'r')
-        print("----------AVAILABLE BOOKS-------------")
-        print("BOOK ID | NAME | AUTHOR")
-        for i in AVAILABLE_BOOKS:
-            print(i.strip())
-        AVAILABLE_BOOKS.close()
-        print('\n')
-        print("---------ISSUED BOOKS--------------")
-        ISSUED_BOOKS=open("issued.txt",'r')
-        print("BOOK ID | NAME | AUTHOR")
-        for i in ISSUED_BOOKS:
-            print(i.strip())
-        ISSUED_BOOKS.close()
-    except FileNotFoundError:
-        print("File not found")
+                AVAILABLE_BOOKS=open("available.txt",'r')
+                print("----------AVAILABLE BOOKS-------------")
+                print("BOOK ID | NAME | AUTHOR")
+                for i in AVAILABLE_BOOKS:
+                        print(i.strip())
+                        AVAILABLE_BOOKS.close()
+                        print('\n')
+                print("---------ISSUED BOOKS--------------")
+                ISSUED_BOOKS=open("issued.txt",'r')
+                print("BOOK ID | NAME | AUTHOR")
+                for i in ISSUED_BOOKS:
+                        print(i.strip())
+                ISSUED_BOOKS.close()
+        except FileNotFoundError:
+                print("File not found")
 def add_book():
         f2=open("available.txt",'a+')
         book=[]
@@ -98,6 +98,7 @@ while ans in('y','Y'):
            print("Invalid choice")
        ans=input("Do you wish to continue?(Y/N):")
     
+
 
 
 
