@@ -1,21 +1,21 @@
 import os
 def view_books():
-        try:
-                AVAILABLE_BOOKS=open("available.txt",'r')
-                print("----------AVAILABLE BOOKS-------------")
-                print("BOOK ID | NAME | AUTHOR")
-                for i in AVAILABLE_BOOKS:
-                        print(i.strip())
-                        AVAILABLE_BOOKS.close()
-                        print('\n')
-                print("---------ISSUED BOOKS--------------")
-                ISSUED_BOOKS=open("issued.txt",'r')
-                print("BOOK ID | NAME | AUTHOR")
-                for i in ISSUED_BOOKS:
-                        print(i.strip())
-                ISSUED_BOOKS.close()
-        except FileNotFoundError:
-                print("File not found")
+    try:
+        AVAILABLE_BOOKS=open("available.txt",'r')
+        print("----------AVAILABLE BOOKS-------------")
+        print("BOOK ID | NAME | AUTHOR")
+        for i in AVAILABLE_BOOKS:
+            print(i.strip())
+        AVAILABLE_BOOKS.close()
+        print('\n')
+        print("---------ISSUED BOOKS--------------")
+        ISSUED_BOOKS=open("issued.txt",'r')
+        print("BOOK ID | NAME | AUTHOR")
+        for i in ISSUED_BOOKS:
+            print(i.strip())
+        ISSUED_BOOKS.close()
+    except FileNotFoundError:
+        print("File not found")
 def add_book():
         f2=open("available.txt",'a+')
         book=[]
@@ -84,8 +84,7 @@ while ans in('y','Y'):
        print("2.Add Book")
        print("3.Issue Book")
        print("4.Return Book")
-       print("5.Exit")
-       choice=input("Enter choice:")
+       choice=input("Enter choice:(1..4)")
        if choice=="1":
            view_books()
        elif choice=="2":
@@ -98,6 +97,7 @@ while ans in('y','Y'):
            print("Invalid choice")
        ans=input("Do you wish to continue?(Y/N):")
     
+
 
 
 
