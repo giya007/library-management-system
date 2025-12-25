@@ -1,1 +1,3 @@
-[111, 'Harry Potter', 'Jk rowling']
+[1, Harry Potter and the Philosopher's Stone, JK Rowling]
+[2, The Hobbit, JRR Tolkien]
+[3, To Kill a Mockingbird, Harper Lee]
