@@ -1,4 +1,3 @@
-# pythonproject
 # Library Management System (Python)
 
 A simple terminal-based Library Management System developed using Python as part of a first-year BTech group mini project.
